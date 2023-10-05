@@ -1,0 +1,61 @@
+RustDesk Server Setup Ubutu Server
+
+Follow below instructions
+
+First of all update the server
+
+sudo apt-get update && sudo apt-get upgrade
+
+Incase you also want to upgrade the distribution then you can use the command below
+
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
+
+Now allow ports to Server
+
+Next, download the RustDesk server binary using the following command:
+How to Install the server
+
+Please setup your firewall on your server prior to running the script.
+
+Make sure you have got access via ssh or otherwise setup prior setting up the firewall, command for UFW is:
+
+ufw allow proto tcp from YOURIP to any port 22
+
+If you have UFW installed use the following commands:
+
+ufw allow 21115:21119/tcp
+ufw allow 8000/tcp
+ufw allow 21116/udp
+sudo ufw enable
+
+Run the following commands:
+
+wget https://raw.githubusercontent.com/dinger1986/rustdeskinstall/master/install.sh
+chmod +x install.sh
+./install.sh
+
+Rustdesk windows powershell install script
+
+Generates a powershell script for install grabbing WAN IP and Key currently in /opt/rustdesk but will be moved to a web url for easy deployment.
+Tips
+
+If you want to restart the services use the following commands:
+
+sudo systemctl restart rustdesksignal
+sudo systemctl restart rustdeskrelay
+
+Client Installation
+
+Before we proceed, make sure that your server has ports open
+
+TCP Ports 21115:21119 and 8000 for http
+
+UDP Port 21116
+
+Now After above Installation, your system is ready. You can now download the client Installation Script using the link of the server which will be displayed once the installation is completed in my case it was as below;
+
+http://rustdesk.syncbricks.com:8000
+
+You will download the script and run that in your computer. For Active Directly you can assign the script to run for all the users.
+
+This is PowerShell Script and needs unrestricted access for unsigned application and then you must restart.
