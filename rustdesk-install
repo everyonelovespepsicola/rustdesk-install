@@ -59,3 +59,12 @@ http://rustdesk.syncbricks.com:8000
 You will download the script and run that in your computer. For Active Directly you can assign the script to run for all the users.
 
 This is PowerShell Script and needs unrestricted access for unsigned application and then you must restart.
+
+How to update the server
+
+Run the following commands:
+
+wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/update.sh
+chmod +x update.sh
+./update.sh
+
